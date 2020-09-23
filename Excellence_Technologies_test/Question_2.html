@@ -1,0 +1,32 @@
+<script type="text/javascript">
+
+	//array initialization
+	let arr = [0,0,1,1,0,0,0,1,0,0,1,1,1,0]
+	let arr1 = [1,0,0,0,0,1,0,0,0,1]
+
+	//function creation
+	function func(array){
+		let a = 0;
+		let b = 0;
+		for(let i = 0; i<array.length; i++)
+		{
+			if(array[i]==0)
+			{
+				a = 0;
+			}
+			else
+			{
+				a = a + 1;
+				b = Math.max(a,b);
+			}
+		}
+
+		//output
+		console.log(b)
+
+	}
+
+	//function calling
+	func(arr);
+	func(arr1);
+</script>

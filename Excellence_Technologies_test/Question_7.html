@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question 7</title>
+
+  <button onclick="func()">Click Me</button>
+  <div id="div"></div>
+
+</head>
+<body>
+<script type="text/javascript">
+
+function func() 
+{
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() 
+    {
+        if (xhr.readyState == XMLHttpRequest.DONE) 
+        {
+           if (xhr.status == 200) 
+           {
+               document.getElementById("div").innerHTML = xhr.responseText;
+           }
+           else if (xhr.status == 400) 
+           {
+              alert('There was an error 400');
+           }
+           else 
+           {
+               alert('something else other than 200 was returned');
+           }
+        }
+    };
+
+    xhr.open("GET", "www.example.com/api/get/1", true);
+    xhr.send();
+}
+</script>
+</body>
+</html>
+
+
+
+
+

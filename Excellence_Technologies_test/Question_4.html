@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Qusetion 4</title>
+</head>
+<body>
+<h1 id="submited"></h1>
+
+<form onsubmit=" return func()">
+   <input type='text' name='firstname' id="first"  />
+   <span><p id="a"></p></span>
+   <br>
+   <input type='checkbox' name='checkme' id="second" />
+   <span><p id="b"></p></span>
+   <br>
+   <input type='submit' value='submit' />
+   <br>
+</form>
+
+<script type="text/javascript">
+	function func(){
+		var first = document.getElementById('first').value;
+		var second = document.getElementById('second');
+
+		if(first == "")
+		{	
+			document.getElementById('a').innerHTML = "Please enter something";
+			document.getElementById('a').style.color = "red"
+			return false;
+		}
+		else
+		{
+			if(second.checked == false)
+			{
+				document.getElementById('b').innerHTML = "Please select the checkbox";
+			document.getElementById('b').style.color = "red"
+			return false;
+			}
+			else
+			{
+				document.getElementById('submited').innerHTML = "Form submitted successfully";
+			return false;
+			}
+
+		}
+		
+	}
+</script>
+
+</body>
+</html>
